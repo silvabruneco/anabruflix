@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnaBruflix</title> 
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="netflix.jpg" alt="Netflix Logo">
+            </div>
+            <div class="menu">
+                <a href="Netflix.html">Início</a>
+                <a href="Nos.html">Nós</a>
+                <a href="#">Filmes</a>
+                <a href="Playlist.html">Playlist</a>
+                <a href="bonus.html">bônus</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1 style="color: #fff;">Cuzinho Quando ?</h1>
+        <div class="options">
+            <button id="yesButton" class="btn btn-red">sempre S2</button>
+            <button id="notButton" class="btn btn-red">Nunca</button>
+        </div>
+    </main>
+    <script>
+        const notButton = document.getElementById("notButton");
+        const yesButton = document.getElementById("yesButton");
+
+        notButton.addEventListener("mouseover", () => {
+            const randomX = Math.floor(Math.random() * ((window.innerWidth / 4) - ((window.innerWidth / 4) * -1)) + ((window.innerWidth / 4) * -1));
+            const randomY = Math.floor(Math.random() * ((window.innerHeight / 4) - ((window.innerHeight / 4) * -1)) + ((window.innerHeight / 4) * -1));
+            notButton.style.position = "relative";
+            notButton.style.left = `${randomX}px`;
+            notButton.style.top = `${randomY}px`;
+        });
+
+        notButton.addEventListener("click", function () {
+            console.log("Botão NAO clicado!");
+            const randomX = Math.floor(Math.random() * ((window.innerWidth / 4) - ((window.innerWidth / 4) * -1)) + ((window.innerWidth / 4) * -1));
+            const randomY = Math.floor(Math.random() * ((window.innerHeight / 4) - ((window.innerHeight / 4) * -1)) + ((window.innerHeight / 4) * -1));
+            notButton.style.position = "relative";
+            notButton.style.left = `${randomX}px`;
+            notButton.style.top = `${randomY}px`;
+        });
+
+        yesButton.addEventListener("click", function () {
+            console.log("Botão SIM clicado!");
+            location.href = "https://www.youtube.com/watch?v=IuBQkdsajVE";
+        });
+
+    </script>
+
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    color: #fff;
+    margin: 0;
+}
+
+header {
+    background-color: #141414;
+    padding: 20px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+main {
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 70vh;
+    background-color: #141414;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.hero button {
+    background-color: #e50914;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+.lista-filmes {
+    display: flex;
+    justify-content: center;
+}
+
+.filme {
+    width: 200px;
+    margin-right: 10px;
+    display: inline-block;
+    text-align: center;
+}
+
+.filme img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.filme h3 {
+    font-size: 18px;
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #000;
+}
+
+.options {
+    margin-top: 12px;
+    display: flex;
+    gap: 32px;
+}
+
+.btn {
+    padding-left: 32px;
+    padding-right: 32px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-red {
+    background-color: #e50914;
+}
+
+.btn-red:hover {
+    background-color: #b2070f;
+}
+
+@media screen and (max-width: 600px) {
+    .btn {
+        font-size: 14px;
+    }
+}
+    </style>
+     <footer>
+        <p>&copy; 2023 AnaBruflix</p>
+    </footer>
+</body>
+</html>

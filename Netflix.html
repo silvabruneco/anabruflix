@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>AnaBruflix</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="netflix.jpg" alt="Netflix Logo">
+            </div>
+            <div class="menu">
+                <a href="Netflix.html">Início</a>
+                <a href="Nos.html">Nós</a>
+                <a href="#">Filmes</a>
+                <a href="Playlist.html">Playlist</a>
+                <a href="Bonus.html">Bônus</a>
+            </div>
+        </nav>
+    </header>    
+
+    <section class="hero">
+        <div id="contador">
+            <h1>Juntos há <span id="dias"></span> dias <span id="horas"></span> horas <span id="minutos"></span> minutos <span id="segundos">0</span> segundos!</h1>
+            <a href="videoNos.mp4"><button>Assita agora</button></a>
+        </div>
+    </section>
+
+    <script>
+        // Defina a data em que vocês começaram a namorar (no formato "Ano, Mês, Dia, Hora, Minuto, Segundo")
+        const dataInicioNamoro = new Date("2022-09-08T22:00:00");
+    
+        // Atualize o contador de tempo a cada segundo
+        function atualizarContador() {
+            const dataAtual = new Date();
+            const diferenca = dataAtual - dataInicioNamoro;
+    
+            const segundosTotais = Math.floor(diferenca / 1000);
+            const segundos = segundosTotais % 60;
+    
+            const minutosTotais = Math.floor(segundosTotais / 60);
+            const minutos = minutosTotais % 60;
+    
+            const horasTotais = Math.floor(minutosTotais / 60);
+            const horas = horasTotais % 24;
+    
+            const dias = Math.floor(horasTotais / 24);
+    
+            // Atualize os elementos HTML com os valores calculados
+            document.getElementById("dias").textContent = dias;
+            document.getElementById("horas").textContent = horas;
+            document.getElementById("minutos").textContent = minutos;
+            document.getElementById("segundos").textContent = segundos;
+        }
+    
+        // Chame a função para atualizar o contador de tempo
+        atualizarContador();
+    
+        // Atualize o contador a cada segundo
+        setInterval(atualizarContador, 1000);
+    </script>
+    
+    
+
+    <footer>
+        <p>&copy; 2023 AnaBruflix</p>
+    </footer>
+</body>
+</html>
